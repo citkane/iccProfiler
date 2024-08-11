@@ -1,0 +1,10 @@
+{
+  "name": "iccProfiler",
+  "main": "frontend/index.html",
+  "inject_js_start": "frontend/script/index.js",
+  "type": "module",
+  "user-agent": "%name NWjs/%nwver Blink/%webkit_ver (%osinfo) Chromium/%chromium_ver",
+  "window": {
+    "icon": "resource/iccProfiler.svg"
+  }
+}

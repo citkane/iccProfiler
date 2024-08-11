@@ -1,13 +1,6 @@
 import Wss from "./Wss";
-import chromium from "chromium";
-import { fileURLToPath } from "node:url";
-import { execFileSync } from "node:child_process";
-import path from "node:path";
 
-const __filepath = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filepath);
-const index = path.join(__dirname, "../frontend/index.html");
-execFileSync(chromium.path, [`file://${index}`]);
-
+const port = process.env.PORT;
+if (!port) throw Error("No websocket port was given in the Env.");
 const wss = new Wss();
-wss.listen(8080);
+wss.listen(parseInt(port) + 1);
